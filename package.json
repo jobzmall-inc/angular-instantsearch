@@ -38,29 +38,6 @@
       }
     ]
   },
-  "scripts": {
-    "build": "./scripts/build.sh",
-    "build:tests": "./scripts/build-tests.sh",
-    "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
-    "lint:fix": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
-    "dev": "webpack-dev-server --config webpack.demo.js --inline --progress --host 0.0.0.0 --port 3000",
-    "test": "jest",
-    "test:ci": "yarn lint && yarn build:tests && jest --runInBand",
-    "test:watch": "jest --watch",
-    "examples:ecommerce": "./scripts/run-example.sh e-commerce",
-    "examples:ecommerce:build": "./scripts/build-example.sh e-commerce",
-    "examples:router": "./scripts/run-example.sh angular-router",
-    "examples:router:build": "./scripts/build-example.sh angular-router",
-    "examples:media": "./scripts/run-example.sh media",
-    "examples:media:build": "./scripts/build-example.sh media",
-    "examples:ssr": "./scripts/run-example.sh server-side-rendering",
-    "examples:ssr:build": "./scripts/build-example.sh server-side-rendering",
-    "release": "./scripts/release.js",
-    "netlify": "./scripts/netlify.sh",
-    "doc:dev": "cd community-website && yarn && yarn start",
-    "doc:build": "cd community-website && yarn && yarn docs:build",
-    "doc:publish": "./scripts/publish-docs.sh"
-  },
   "jest": {
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/helpers/setup-jest.ts",
@@ -94,7 +71,8 @@
     "instantsearch.js": "^2.8.0",
     "lodash": "^4.17.10",
     "nouislider": "^10.0.0",
-    "querystring-es3": "^0.2.1"
+    "querystring-es3": "^0.2.1",
+    "tslib": "^1.7.1"
   },
   "devDependencies": {
     "@angular/common": "5.2.11",
@@ -154,5 +132,15 @@
     "@angular/core": ">=5.0.0 <8.0.0",
     "@angular/platform-browser": ">=5.0.0 <8.0.0",
     "@angular/platform-browser-dynamic": ">=5.0.0 <8.0.0"
-  }
+  },
+  "main": "bundles/angular-instantsearch.umd.js",
+  "module": "fesm5/angular-instantsearch.js",
+  "es2015": "fesm2015/angular-instantsearch.js",
+  "esm5": "esm5/angular-instantsearch.js",
+  "esm2015": "esm2015/angular-instantsearch.js",
+  "fesm5": "fesm5/angular-instantsearch.js",
+  "fesm2015": "fesm2015/angular-instantsearch.js",
+  "typings": "angular-instantsearch.d.ts",
+  "metadata": "angular-instantsearch.metadata.json",
+  "sideEffects": false
 }

@@ -1,6 +1,0 @@
-[build]
-  command="yarn netlify"
-  publish="netlify-dist"
-
-[build.environment]
-  YARN_VERSION = "1.7.0"
