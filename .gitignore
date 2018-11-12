@@ -6,7 +6,7 @@ package-lock.json
 
 node_modules/
 
-dist/
+
 netlify-dist/
 
 dist.tgz
